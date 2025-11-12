@@ -1,0 +1,41 @@
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 1000px;
+        border: 2px solid black;
+        margin-left: 12%;
+        margin-top: 20px;
+        border-radius: 4px;
+      }
+      .image {
+        position: relative;
+      }
+      .image img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+      }
+      .capsule {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        color: white;
+        padding: 2px;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 2px 3px;
+      }
+      .text{
+        margin: 5px 10px;
+      }
+      .text h1{
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
