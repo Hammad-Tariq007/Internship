@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title"><%= listTitle %></h1>
+
+      <ul class="todo-list">
+        <% newItem.forEach((item) => { %>
+          <li class="todo-item">
+            <label class="todo-label">
+              <input type="checkbox" class="todo-checkbox" />
+              <span class="todo-text"><%= item %></span>
+            </label>
+          </li>
+        <% }); %>
+      </ul>
+      <form class="todo-form" action="/" method="post">
+        <input
+          type="text"
+          name="newItem"
+          class="todo-input"
+          placeholder="Add an item"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="add-btn" name="list" value="<%= listTitle %>">Add</button>
+      </form>
+    </div>
+    <script>
+      document.querySelectorAll(".todo-checkbox").forEach(cb => {
+        cb.addEventListener("change", function () {
+          const text = this.nextElementSibling;
+          if (this.checked) {
+            text.classList.add("completed");
+          } else {
+            text.classList.remove("completed");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
