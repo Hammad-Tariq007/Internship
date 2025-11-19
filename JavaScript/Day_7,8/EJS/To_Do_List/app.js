@@ -31,11 +31,8 @@ app.post("/", (req, res) => {
     listItems.push(item);
     res.redirect("/");
   }
-  //   console.log(item);
 });
 
 app.listen(port, () => {
   console.log("Server is running at port 3000...");
 });
-
-// console.log(date);

@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs'); %>
+  <h1>Home</h1>
+  <p><%= bodyText %></p>
+  <% newPosts.forEach((post) => { %>
+  <h1><%= post.title %></h1>
+  <% let str = post.body; let newStr = str.length > 100 ? str.slice(0, 100) +
+  "..." : str; %>
+  <p>
+    <%= newStr %><a
+      href="/posts/<%= post.title %>"
+      class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+      >Read More</a
+    >
+    <% }) %>
+  </p>
+<%- include('partials/footer.ejs'); %>
